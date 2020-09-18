@@ -11,8 +11,12 @@ banner = """
 """
 os.system('clear')
 print(banner)
-
-from telethon import TelegramClient, events, sync
+try:
+	from telethon import TelegramClient, sync
+except ModuleNotFoundError:
+	os.system('pip install -U telethon')
+	os.system('pip install --upgrade pip')
+	
 from time import sleep
 import random
 
