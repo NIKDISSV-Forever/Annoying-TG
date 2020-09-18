@@ -30,7 +30,7 @@ session = input('Имя сессии: ')
 if session == '' or session == ' ':
 	session = random.choice((os.name,  os.getlogin(), str(os.getpid())))
 	print(session)
-sdir = os.getcwd() + '/saved/' + session + '/'
+sdir = os.getcwd() + '/saved/'
 
 if not os.path.exists(sdir):
 	os.mkdir(sdir)
