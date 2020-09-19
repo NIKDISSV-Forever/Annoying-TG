@@ -104,11 +104,13 @@ def while1msg(msg, name):
 	global num
 	num = 1
 	while 1:
-		client.send_message(name, msg.replace('%%num%%', str(num)).replace('%%name%%', str(name)).replace('%%randint%%', str(random.randint(-100000000, 1000000000))).replace('%%rfloat%%', str(random.uniform(-1, 1))).replace('%%rbit%%', str(os.urandom(1))).replace('%%reff%%', random.choice(('__', '**', '```'))).replace('%%rchr%%', chr(random.randint(1, 110000))))
-		print('Отправлено сообщение %s, для %s, %s раз(а).' % (msg, name, num))
-		
-		num += 1
-		sleep(SLP)
+		try:
+			client.send_message(name, msg.replace('%%num%%', str(num)).replace('%%name%%', str(name)).replace('%%randint%%', str(random.randint(-100000000, 1000000000))).replace('%%rfloat%%', str(random.uniform(-1, 1))).replace('%%rbit%%', str(os.urandom(1))).replace('%%reff%%', random.choice(('__', '**', '```'))).replace('%%rchr%%', chr(random.randint(1, 110000))))
+			print('Отправлено сообщение %s, для %s, %s раз(а).' % (msg, name, num))
+			num += 1
+			sleep(SLP)
+		except Exception as er:
+			print(er)
 		
 def spamm(msg, name, col):
 	global num
@@ -126,11 +128,14 @@ def while1msgF(msg, name):
 	global num
 	num = 1
 	while 1:
-		client.send_file(name, msg.replace('%%num%%', str(num)).replace('%%name%%', str(name)).replace('%%randint%%', str(random.randint(-100000000, 1000000000))).replace('%%rfloat%%', str(random.uniform(-1, 1))).replace('%%rbit%%', str(os.urandom(1))).replace('%%reff%%', random.choice(('__', '**', '```'))).replace('%%rchr%%', chr(random.randint(1, 110000))))
-		print('Отправлено сообщение %s, для %s, %s раз(а).' % (msg, name, num))
-		
-		num += 1
-		sleep(SLP)
+		try:
+			client.send_file(name, msg.replace('%%num%%', str(num)).replace('%%name%%', str(name)).replace('%%randint%%', str(random.randint(-100000000, 1000000000))).replace('%%rfloat%%', str(random.uniform(-1, 1))).replace('%%rbit%%', str(os.urandom(1))).replace('%%reff%%', random.choice(('__', '**', '```'))).replace('%%rchr%%', chr(random.randint(1, 110000))))
+			print('Отправлено сообщение %s, для %s, %s раз(а).' % (msg, name, num))
+			
+			num += 1
+			sleep(SLP)
+		except Exception as er:
+			print(er)
 		
 def spammF(msg, name, col):
 	global num
@@ -221,7 +226,7 @@ def mainQ(C):
 			num = 1
 			for msgg in client.iter_messages(name):
 				text = msgg.text
-				print(msgg.id, text, str(num))
+				print(msgg.id, text, '(' + str(num) + ')')
 				
 				try:
 					msgg.reply(msg.replace('%%text%%', str(text)).replace('%%num%%', str(num)).replace('%%randint%%', str(random.randint(-100000000, 1000000000))).replace('%%rfloat%%', str(random.uniform(-1, 1))).replace('%%rbit%%', str(os.urandom(1))).replace('%%reff%%', random.choice(('__', '**', '```'))).replace('%%rchr%%', chr(random.randint(1, 110000))))
