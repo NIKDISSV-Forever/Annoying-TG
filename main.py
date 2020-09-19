@@ -1,5 +1,5 @@
 import os
-
+os.system('git pull')
 banner = """
       {_                                                                 {___ {______   {____   
      {_ __                                           {_                       {__     {_    {__ 
