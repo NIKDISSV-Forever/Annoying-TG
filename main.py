@@ -104,7 +104,7 @@ def while1msg(msg, name):
 	global num
 	num = 1
 	while 1:
-		client.send_message(name, msg.replace('%%num%%', str(num)).replace('%%name%%', str(name)).replace('%%randint%%', str(random.randint(-100000000, 1000000000))).replace('%%rfloat%%', str(random.uniform(-1, 1))).replace('%%rbit%%', str(os.urandom(1))).replace('%%reff%%', random.choice(('__', '**', '```'))))
+		client.send_message(name, msg.replace('%%num%%', str(num)).replace('%%name%%', str(name)).replace('%%randint%%', str(random.randint(-100000000, 1000000000))).replace('%%rfloat%%', str(random.uniform(-1, 1))).replace('%%rbit%%', str(os.urandom(1))).replace('%%reff%%', random.choice(('__', '**', '```'))).replace('%%rchr%%', chr(random.randint(1, 110000))))
 		print('Отправлено сообщение %s, для %s, %s раз(а).' % (msg, name, num))
 		
 		num += 1
@@ -115,7 +115,7 @@ def spamm(msg, name, col):
 	num = 1
 	while num <= col:
 		try:
-			client.send_message(name, msg.replace('%%num%%', str(num)).replace('%%name%%', str(name)).replace('%%randint%%', str(random.randint(-100000000, 1000000000))).replace('%%rfloat%%', str(random.uniform(-1, 1))).replace('%%rbit%%', str(os.urandom(1))).replace('%%reff%%', random.choice(('__', '**', '```'))))
+			client.send_message(name, msg.replace('%%num%%', str(num)).replace('%%name%%', str(name)).replace('%%randint%%', str(random.randint(-100000000, 1000000000))).replace('%%rfloat%%', str(random.uniform(-1, 1))).replace('%%rbit%%', str(os.urandom(1))).replace('%%reff%%', random.choice(('__', '**', '```'))).replace('%%rchr%%', chr(random.randint(1, 110000))))
 			print('Отправлено сообщение %s, для %s, %s раз(а).' % (msg, name, num))
 			num += 1
 			sleep(SLP)
@@ -126,7 +126,7 @@ def while1msgF(msg, name):
 	global num
 	num = 1
 	while 1:
-		client.send_file(name, msg.replace('%%num%%', str(num)).replace('%%name%%', str(name)).replace('%%randint%%', str(random.randint(-100000000, 1000000000))).replace('%%rfloat%%', str(random.uniform(-1, 1))).replace('%%rbit%%', str(os.urandom(1))).replace('%%reff%%', random.choice(('__', '**', '```'))))
+		client.send_file(name, msg.replace('%%num%%', str(num)).replace('%%name%%', str(name)).replace('%%randint%%', str(random.randint(-100000000, 1000000000))).replace('%%rfloat%%', str(random.uniform(-1, 1))).replace('%%rbit%%', str(os.urandom(1))).replace('%%reff%%', random.choice(('__', '**', '```'))).replace('%%rchr%%', chr(random.randint(1, 110000))))
 		print('Отправлено сообщение %s, для %s, %s раз(а).' % (msg, name, num))
 		
 		num += 1
@@ -138,12 +138,12 @@ def spammF(msg, name, col):
 	while num <= col:
 		
 		try:
-			client.send_file(name, msg.replace('%%num%%', str(num)).replace('%%name%%', str(name)).replace('%%randint%%', str(random.randint(-100000000, 1000000000))).replace('%%rfloat%%', str(random.uniform(-1, 1))).replace('%%rbit%%', str(os.urandom(1))).replace('%%reff%%', random.choice(('__', '**', '```'))))
+			client.send_file(name, msg.replace('%%num%%', str(num)).replace('%%name%%', str(name)).replace('%%randint%%', str(random.randint(-100000000, 1000000000))).replace('%%rfloat%%', str(random.uniform(-1, 1))).replace('%%rbit%%', str(os.urandom(1))).replace('%%reff%%', random.choice(('__', '**', '```'))).replace('%%rchr%%', chr(random.randint(1, 110000))))
 			print('Отправлено сообщение %s, для %s, %s раз(а).' % (msg, name, num))
 			num += 1
 			sleep(SLP)
 			
-		except Exception as er:
+		except Exeption as er:
 			print(er)
 			
 def sleeper():
@@ -224,7 +224,7 @@ def mainQ(C):
 				print(msgg.id, text, str(num))
 				
 				try:
-					msgg.reply(msg.replace('%%text%%', str(text)).replace('%%num%%', str(num)).replace('%%randint%%', str(random.randint(-100000000, 1000000000))).replace('%%rfloat%%', str(random.uniform(-1, 1))).replace('%%rbit%%', str(os.urandom(1))).replace('%%reff%%', random.choice(('__', '**', '```'))))
+					msgg.reply(msg.replace('%%text%%', str(text)).replace('%%num%%', str(num)).replace('%%randint%%', str(random.randint(-100000000, 1000000000))).replace('%%rfloat%%', str(random.uniform(-1, 1))).replace('%%rbit%%', str(os.urandom(1))).replace('%%reff%%', random.choice(('__', '**', '```'))).replace('%%rchr%%', chr(random.randint(1, 110000))))
 					num += 1
 					sleep(SLP)
 				except Exception as er:
