@@ -143,7 +143,7 @@ def spammF(msg, name, col):
 			num += 1
 			sleep(SLP)
 			
-		except Exeption as er:
+		except Exception as er:
 			print(er)
 			
 def sleeper():
