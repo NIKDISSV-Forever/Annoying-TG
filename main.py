@@ -29,7 +29,9 @@ n = '\n'
 session = input('Имя сессии: ')
 if session == '' or session == ' ':
 	session = random.choice((os.name,  os.getlogin(), str(os.getpid())))
-	print(session)
+
+print(session)
+
 sdir = os.getcwd() + '/saved/'
 
 if not os.path.exists(sdir):
@@ -92,6 +94,7 @@ def profile():
 				r = 'me'
 		else:
 			r = str(r)
+	del(pl)
 			
 	return r
 	
@@ -123,7 +126,7 @@ def while1msgF(msg, name):
 	global num
 	num = 1
 	while 1:
-		client.send_message(name, msg.replace('%%num%%', str(num)).replace('%%name%%', str(name)).replace('%%randint%%', str(random.randint(-100000000, 1000000000))).replace('%%rfloat%%', str(random.uniform(-1, 1))).replace('%%rbit%%', str(os.urandom(1))).replace('%%reff%%', random.choice(('__', '**', '```'))))
+		client.send_file(name, msg.replace('%%num%%', str(num)).replace('%%name%%', str(name)).replace('%%randint%%', str(random.randint(-100000000, 1000000000))).replace('%%rfloat%%', str(random.uniform(-1, 1))).replace('%%rbit%%', str(os.urandom(1))).replace('%%reff%%', random.choice(('__', '**', '```'))))
 		print('Отправлено сообщение %s, для %s, %s раз(а).' % (msg, name, num))
 		
 		num += 1
@@ -135,7 +138,7 @@ def spammF(msg, name, col):
 	while num <= col:
 		
 		try:
-			client.send_message(name, msg.replace('%%num%%', str(num)).replace('%%name%%', str(name)).replace('%%randint%%', str(random.randint(-100000000, 1000000000))).replace('%%rfloat%%', str(random.uniform(-1, 1))).replace('%%rbit%%', str(os.urandom(1))).replace('%%reff%%', random.choice(('__', '**', '```'))))
+			client.send_file(name, msg.replace('%%num%%', str(num)).replace('%%name%%', str(name)).replace('%%randint%%', str(random.randint(-100000000, 1000000000))).replace('%%rfloat%%', str(random.uniform(-1, 1))).replace('%%rbit%%', str(os.urandom(1))).replace('%%reff%%', random.choice(('__', '**', '```'))))
 			print('Отправлено сообщение %s, для %s, %s раз(а).' % (msg, name, num))
 			num += 1
 			sleep(SLP)
