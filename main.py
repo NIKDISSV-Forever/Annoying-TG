@@ -37,8 +37,8 @@ sdir = os.getcwd() + '/saved/'
 if not os.path.exists(sdir):
 	os.mkdir(sdir)
 
-fid = sdir + '.id'
-hashf = sdir + '.hash'
+fid = sdir + 'id'
+hashf = sdir + 'hash'
 
 if os.path.isfile(fid):
 	f = open(fid, 'r')
