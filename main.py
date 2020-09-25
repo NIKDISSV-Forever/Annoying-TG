@@ -1,6 +1,5 @@
 import os
 os.system('git pull')
-os.system('clear')
 banner = """
       {_                                                                 {___ {______   {____   
      {_ __                                           {_                       {__     {_    {__ 
@@ -10,14 +9,14 @@ banner = """
  {__       {__  {__  {__ {__  {__ {__  {__     {__  {__ {__  {__ {__  {__     {__     {__    {_ 
 {__         {__{___  {__{___  {__   {__       {__   {__{___  {__     {__      {__      {_____    
 """
+os.system('clear')
 print(banner)
 try:
 	from telethon import TelegramClient, sync
 except ModuleNotFoundError:
 	os.system('pip install -U telethon')
 	os.system('pip install --upgrade pip')
-	from telethon import TelegramClient, sync
-
+	
 from time import sleep
 import random
 
@@ -38,8 +37,8 @@ sdir = os.getcwd() + '/saved/'
 if not os.path.exists(sdir):
 	os.mkdir(sdir)
 
-fid = sdir + session + '.id'
-hashf = sdir + session + '.hash'
+fid = sdir + '.id'
+hashf = sdir + '.hash'
 
 if os.path.isfile(fid):
 	f = open(fid, 'r')
